@@ -1,34 +1,19 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Тестовое задание на вакансию "Младший программист пользовательских интерфейсов" в компанию Vipservice 
 
-## Getting Started
+## ТЗ
+https://docs.google.com/document/d/1qPSFoOCgQtqnYm0zLSQtNt7bH3Ok90_5XhDNlCN6WK4/edit#
 
-First, run the development server:
+## Запуск
+npm i && npm run dev
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+## Технологии
+1. Next
+2. Typescript
+3. React-hook-form
+4. Zod
+5. Tailwind
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `pages/avia.tsx`. The page auto-updates as you edit the file.
-
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## Комментарий
+  В ТЗ не было жесткого ограничение на использования библиотек, поэтому я решил использовать react-hook-form для валидации, так же я выбрал tailwind вместо 
+различных uikit-ов, чтобы написать компоненты с нуля, а не кастомизировать существующие, дабы они лучше соответствовали макету. 
+  В макете выбор времени был только тогда, когда указана дата вылета, но из описания не очевидно должно ли быть так или это ошибка дизайнера, поэтому я добавил эту возможность в обоих случаях. Так же в ТЗ не было сказано про адаптивность, но я подумал, что лучше ее сделать. 
