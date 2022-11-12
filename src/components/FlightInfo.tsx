@@ -26,8 +26,8 @@ const FlightInfo = ({
   duration,
 }: FlightInfoProps) => {
   return (
-    <div className="flex w-full">
-      <div>
+    <div className="grid grid-cols-10 w-full">
+      <div className="md:col-span-2 col-span-5 md:order-none order-1">
         <span className="block text-2xl text-black font-bold mb-[4px]">
           {fromTime}
         </span>
@@ -38,7 +38,12 @@ const FlightInfo = ({
           {fromDate}
         </span>
       </div>
-      <div className="mx-8 flex -mt-2 relative grow h-14 items-center text-gray">
+      <div
+        className={cn(
+          "flex -mt-2 relative grow h-14 items-center text-gray",
+          "md:col-span-6 col-span-10 md:mx-8"
+        )}
+      >
         <span className="absolute -left-[10px] top-0">{startPoint.short}</span>
         <span className="absolute -right-[10px] top-0">{endPoint.short}</span>
         <span
@@ -59,7 +64,7 @@ const FlightInfo = ({
           В пути {duration}
         </span>
       </div>
-      <div>
+      <div className="md:col-span-2 col-span-5 md:order-none order-1 text-end">
         <span className="block text-2xl text-black font-bold mb-[4px]">
           {toTime}
         </span>

@@ -6,7 +6,6 @@ import cn from "classnames";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useRouter } from "next/router";
-import { ComponentProps } from "react";
 
 interface SearchFormValues {
   from: string;
@@ -61,8 +60,18 @@ const SearchForm = ({}: SearchFormProps) => {
           "md:grid-cols-4 sm:grid-cols-2 grid-cols-1"
         )}
       >
-        <Input {...register("from")} label="Откуда" id="from" />
-        <Input {...register("to")} label="Откуда" id="to" />
+        <Input
+          {...register("from")}
+          label="Откуда"
+          id="from"
+          placeholder="Город вылета"
+        />
+        <Input
+          {...register("to")}
+          label="Откуда"
+          id="to"
+          placeholder="Город прилёта"
+        />
         <DatePicker {...register("toDate")} label="Откуда" id="toDate" />
         <DatePicker {...register("fromDate")} label="Откуда" id="fromDate" />
       </div>

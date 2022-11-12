@@ -56,11 +56,11 @@ const FlightCard = ({
         Невозвратный
       </div>
       <div className="grid grid-cols-10">
-        <div className="flex flex-col col-span-2 justify-center items-center w-fit">
+        <div className="md:flex flex-col col-span-2 justify-center items-center w-fit hidden">
           <Image src={S7} width={40} height={40} alt="s7 logo" />
           <span className="text-text-main">S7 Airlines</span>
         </div>
-        <div className="col-span-7 relative">
+        <div className="col-span-10 md:col-span-7 relative">
           <FlightInfo
             {...props}
             toDate={toDate}
@@ -69,11 +69,11 @@ const FlightCard = ({
             toTime={selectedVariant.endTime}
             duration={`${hours} ч ${minutes} мин`}
           />
-          <Bags className="absolute -right-16 -top-12 -z-10" />
-          <div className="mt-4">
+          <Bags className="absolute -right-16 -top-12 -z-10 md:block hidden" />
+          <div className="mt-4 flex md:flex-row flex-col md:px-0 px-8">
             {flightVariants.map((variant, i) => (
               <PickButton
-                className="ml-6 first-of-type:ml-0"
+                className="md:ml-6 md:first-of-type:ml-0 mt-4 first-of-type:mt-0"
                 picked={selectedIndex === i}
                 setPicked={handlePicked(i, variant)}
                 key={i}

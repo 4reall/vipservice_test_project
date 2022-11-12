@@ -41,7 +41,7 @@ const Info: NextPage = () => {
     <>
       {shouldRender && (
         <div className="rounded-2xl overflow-hidden shadow-widget grid grid-cols-10">
-          <div className="col-span-8">
+          <div className="md:col-span-8 col-span-7">
             <FlightCard
               toDate={router.query.toDate as string}
               endPoint={{ name: router.query.to as string, short: "ROV" }}
@@ -60,8 +60,8 @@ const Info: NextPage = () => {
           </div>
           <div
             className={cn(
-              "col-start-9 col-span-2 border-second-light border-l-[1px]",
-              "h-full w-full flex justify-center items-center"
+              "md:col-start-9 md:col-span-2 border-second-light border-l-[1px]",
+              "h-full w-full flex justify-center items-center col-span-3 col-start-8"
             )}
           >
             <span className="font-bold text-3xl">
