@@ -73,7 +73,7 @@ const FlightCard = ({
           <div className="mt-4 flex md:flex-row flex-col md:px-0 px-8">
             {flightVariants.map((variant, i) => (
               <PickButton
-                className="md:ml-6 md:first-of-type:ml-0 mt-4 first-of-type:mt-0"
+                className="md:ml-6 md:first-of-type:ml-0 md:mt-0 mt-4 first-of-type:mt-0"
                 picked={selectedIndex === i}
                 setPicked={handlePicked(i, variant)}
                 key={i}
