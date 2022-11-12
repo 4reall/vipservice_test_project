@@ -14,19 +14,20 @@ const DatePicker = forwardRef<HTMLInputElement, InputProps>(
     const [_value, _setValue] = useState("");
     const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
       _setValue(e.target.value);
+      if (onChange) onChange(e);
     };
 
     return (
-      <label className="relative block">
-        <span className="text-xs block">{label}</span>
+      <label className="relative block text-second-light focus-within:text-text-light">
+        <span className="text-xs block absolute -top-4">{label}</span>
         <input
           value={value ?? _value}
-          onChange={onChange ?? handleChange}
+          onChange={handleChange}
           ref={ref}
           {...props}
           className={cn(
             "pl-8 pr-4 py-2 border-gray border-[1px] block rounded-xl outline-none",
-            "transition-all duration-200 font-bold",
+            "transition-all duration-200 font-bold w-full",
             "placeholder:font-bold placeholder:text-gray",
             "[&::-webkit-calendar-picker-indicator]:opacity-0",
             "[&::-webkit-calendar-picker-indicator]:absolute",

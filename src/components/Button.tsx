@@ -13,7 +13,7 @@ const Button = ({ text, className, ...props }: ButtonProps) => {
     <button
       {...props}
       className={cn(
-        "text-text-light bg-primary-main px-8 py-2 rounded-lg",
+        "text-text-light bg-primary-main px-8 py-2 rounded-xl",
         "transition-all duration-200",
         "hover:bg-primary-dark enabled:active:text-opacity-50 disabled:bg-gray",
         className
