@@ -6,6 +6,7 @@ import cn from "classnames";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useRouter } from "next/router";
+import { useMemo } from "react";
 
 interface SearchFormValues {
   from: string;
@@ -49,6 +50,17 @@ const SearchForm = ({}: SearchFormProps) => {
     });
   };
 
+  const date = useMemo(() => {
+    const date = new Date();
+    const day = date.getDate();
+    const month = date.getMonth() + 1;
+    const year = date.getFullYear();
+    return {
+      min: `${year}-${month}-${day}`,
+      max: `${year + 1}-${month}-${day}`,
+    };
+  }, []);
+
   return (
     <form
       onSubmit={handleSubmit(_onSubmit)}
@@ -72,8 +84,18 @@ const SearchForm = ({}: SearchFormProps) => {
           id="to"
           placeholder="Город прилёта"
         />
-        <DatePicker {...register("toDate")} label="Откуда" id="toDate" />
-        <DatePicker {...register("fromDate")} label="Откуда" id="fromDate" />
+        <DatePicker
+          {...date}
+          {...register("toDate")}
+          label="Откуда"
+          id="toDate"
+        />
+        <DatePicker
+          {...date}
+          {...register("fromDate")}
+          label="Откуда"
+          id="fromDate"
+        />
       </div>
       <div className="p-8 flex justify-end">
         <Button disabled={!isValid} text="Найти билеты" />
